@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <dashboard msg="Welcome to Your Vue.js App" />
+    <Dashboard msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import dashboard from "./components/dashboard.vue";
+import Dashboard from "./components/Dashboard.vue";
 
 export default {
   name: "App",
   components: {
-    dashboard
+    Dashboard
   }
 };
 </script>
