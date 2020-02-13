@@ -1,16 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import User
-from PIL import Image
+from users.models import CustomUser
+# from PIL import Image
 
 
 class Home(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     street_addr = models.CharField(max_length=100)
     zip_code = models.CharField(max_length=10)
     max_occupancy = models.IntegerField()
     housing_type = models.CharField(max_length=10)
     rent_amt = models.IntegerField()
-    sq_ft = model.models.IntegerField()
+    sq_ft = models.IntegerField()
     no_bdr = models.IntegerField()
     no_bath = models.IntegerField()
     pkg_type = models.CharField(max_length=20)
@@ -24,14 +24,14 @@ class Home(models.Model):
     img = models.ImageField(default='default.jpg', upload_to='home_pics')
 
     def __str__(self):
-        return self
+        return self.user
 
     def __save__(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-    img = Image.open(self.img.path)
+        img = Image.open(self.img.path)
 
-    if img.height > 300 or img.width > 300:
-        output_size = (300, 300)
-        img.thumbnail(output_size)
-        img.save(self.img.path)
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.img.path)

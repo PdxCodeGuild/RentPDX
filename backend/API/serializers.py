@@ -1,13 +1,26 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from users.models import CustomUser
 from Home.models import Home
 
 # User Serializer Here
-
+class CustomUserSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model: CustomUser
+        fields = (
+            'id',
+            'username',
+            'user_type_choices',
+            'first_name',
+            'last_name',
+            'full_name',
+            'user_type',
+            'birthdate',
+        )
 
 # Home serializer
 class HomeSerializer(serializers.ModelSerializer):
-    user_info = UserSerializer(read_only=True)
+    user_info = CustomUserSerializer(read_only=True)
 
     class Meta:
         model = Home
@@ -33,3 +46,4 @@ class HomeSerializer(serializers.ModelSerializer):
             'no_broker_fee',
             'img'
         )
+
