@@ -19,6 +19,7 @@ class CustomUserAdmin(UserAdmin):
         'last_name',
         'birthdate'
     ]
+    
     fieldsets = UserAdmin.fieldsets + (
         (None, {'fields' : ('user_type','birthdate')}),
     )
