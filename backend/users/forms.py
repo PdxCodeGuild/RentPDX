@@ -8,11 +8,15 @@ class CustomUserCreationForm(UserCreationForm):
         model = CustomUser
         fields = [
             'username',
-            'email'           
+            'email',
+            'user_type',
+            'birthdate',
+            'first_name',
+            'last_name',          
         ]
 
         #this will be necessary soon 
-        #fields = UserCreationForm.Meta.fields + ('type','first_name','last_name','birthday')
+        # fields = UserCreationForm.Meta.fields + ('user_type','first_name','last_name','birthdate')
 
 class CustomUserChangeForm(UserChangeForm):
 
@@ -20,7 +24,11 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = [
             'username',
-            'email'         
+            'email',
+            'user_type',
+            'birthdate',
+            'first_name',
+            'last_name',         
         ]
         #this will be necessary soon 
-        #fields = UserCreationForm.Meta.fields + ('type','first_name','last_name','birthday')
+        # fields = UserCreationForm.Meta.fields + ('user_type','first_name','last_name','birthdate')
