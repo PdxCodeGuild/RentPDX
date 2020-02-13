@@ -19,5 +19,12 @@ class CustomUserAdmin(UserAdmin):
         'last_name',
         'birthdate'
     ]
+    
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields' : ('user_type','birthdate')}),
+    )
+    add_fieldsets = UserAdmin.add_fieldsets + (
+        (None, {'fields':('user_type','birthdate')}),
+    )
 
 admin.site.register(CustomUser, CustomUserAdmin)
