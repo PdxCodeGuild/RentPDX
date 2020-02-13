@@ -6,7 +6,7 @@ import Favorites from '../components/Favorites.vue'
 import Login from '../components/Login.vue'
 import Landing from '../components/Landing.vue'
 
-import index from '../store'
+// import index from '../store'
 
 
 Vue.use(VueRouter)
@@ -19,7 +19,7 @@ const router = new VueRouter({
             //path, names,  components, 3 ways to reference one thing
             path: '/',
             name: 'landing',
-            component: 'Landing',
+            component: Landing,
 
         },
         {
@@ -27,7 +27,7 @@ const router = new VueRouter({
             //path, names,  components, 3 ways to reference one thing
             path: '/login',
             name: 'login',
-            component: 'Login',
+            component: Login,
 
         },
         {
@@ -35,7 +35,7 @@ const router = new VueRouter({
             //path, names,  components, 3 ways to reference one thing
             path: '/dashboard',
             name: 'dashboard',
-            component: 'Dashboard',
+            component: Dashboard,
 
         },
         {
@@ -43,7 +43,7 @@ const router = new VueRouter({
             //path, names,  components, 3 ways to reference one thing
             path: '/favorites',
             name: 'favorites',
-            component: 'Favorites',
+            component: Favorites,
 
         },
         

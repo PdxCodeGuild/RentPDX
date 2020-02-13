@@ -5,8 +5,9 @@ import Vuex from 'vuex'
 import router from '../router'
 
 
-Vue.use(VueAxios, axios)
-Vue.use(Vuex)
+Vue.use(VueAxios, axios);
+Vue.use(Vuex);
+Vue.use(router);
 
 export default new Vuex.Store({
 
