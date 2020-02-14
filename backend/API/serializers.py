@@ -6,14 +6,12 @@ from Home.models import Home
 class CustomUserSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model: CustomUser
+        model = CustomUser
         fields = (
             'id',
             'username',
-            'user_type_choices',
             'first_name',
             'last_name',
-            'full_name',
             'user_type',
             'birthdate',
         )
